@@ -11,7 +11,7 @@ const AddUser = props => {
 					placeholder="Enter a username"
 					required
 					value={props.username}
-					onChange={props.handleInputChange}
+					onChange={props.handleChange}
 				/>
 			</div>
 			<div className="form-group">
@@ -22,7 +22,7 @@ const AddUser = props => {
 					placeholder="Enter an email address"
 					required
 					value={props.email}
-					onChange={props.handleInputChange}
+					onChange={props.handleChange}
 				/>
 			</div>
 			<input type="submit" className="btn btn-primary btn-lg btn-block" value="Submit" />
