@@ -25,6 +25,11 @@ class App extends Component {
 			isAuthenticated: false
 		}
 	}
+	componentWillMount() {
+		if (window.localStorage.getItem('authToken')) {
+			this.setState({ isAuthenticated: true })
+		}
+	}
 	componentDidMount() {
 		this.getUsers()
 	}
@@ -99,7 +104,7 @@ class App extends Component {
 		this.setState(obj)
 	}
 	logoutUser() {
-		window.localStorage.clear()
+		window.localStorage.clear('authToken')
 		this.setState({ isAuthenticated: false })
 	}
 	render() {
