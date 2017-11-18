@@ -30,6 +30,7 @@ class App extends Component {
 		axios
 			.get(`${process.env.REACT_APP_PAYROLL_SERVICE_URL}/api/users`)
 			.then(res => {
+				console.log(res.data.data.users)
 				this.setState({ users: res.data.data.users })
 			})
 			.catch(err => {

@@ -2,6 +2,7 @@ import React from 'react'
 import { Table } from 'react-bootstrap'
 
 const UsersList = props => {
+	console.log(props)
 	return (
 		<div>
 			<h1>All Users</h1>

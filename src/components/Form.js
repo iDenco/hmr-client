@@ -54,7 +54,7 @@ class Form extends Component {
 				password: this.state.formData.password
 			}
 		}
-		const url = `${process.env.REACT_APP_USERS_SERVICE_URL}/auth/${formType}`
+		const url = `${process.env.REACT_APP_USERS_SERVICE_URL}/api/auth/${formType}`
 		axios
 			.post(url, data)
 			.then(res => {
