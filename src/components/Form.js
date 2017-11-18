@@ -39,7 +39,7 @@ class Form extends Component {
 	}
 	handleUserFormSubmit(event) {
 		event.preventDefault()
-		const formType = this.props.formType
+		const formType = this.props.formType.toLowerCase()
 		let data
 		if (formType === 'login') {
 			data = {
