@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Route, Switch } from 'react-router-dom'
 
-import UsersList from './components/UsersList'
-import About from './components/About'
-import NavBar from './components/NavBar'
-import Form from './components/Form'
-import Logout from './components/Logout'
-import UserStatus from './components/UserStatus'
+import UsersList from '../components/UsersList'
+import About from '../components/About'
+import NavBar from '../components/NavBar'
+import Form from './Form'
+import Logout from '../components/Logout'
+import UserStatus from '../components/UserStatus'
 
 class App extends Component {
 	constructor() {
@@ -61,7 +61,7 @@ class App extends Component {
 									path="/register"
 									render={() => (
 										<Form
-											formType={'Register'}
+											formType={'register'}
 											isAuthenticated={this.state.isAuthenticated}
 											loginUser={this.loginUser.bind(this)}
 										/>
@@ -72,7 +72,7 @@ class App extends Component {
 									path="/login"
 									render={() => (
 										<Form
-											formType={'Login'}
+											formType={'login'}
 											isAuthenticated={this.state.isAuthenticated}
 											loginUser={this.loginUser.bind(this)}
 										/>
