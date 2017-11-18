@@ -7,18 +7,18 @@ const FormErrors = props => {
 		<div>
 			<ul className="validation-list">
 				{// eslint-disable-next-line
-				props.formRules.map(rule => {
+				props.rules.map(rule => {
 					if (rule.field === 'username') {
 						if (props.formType === 'register') {
 							return (
-								<li className="error" key={rule.id}>
+								<li className={rule.valid ? 'success' : 'error'} key={rule.id}>
 									{rule.name}
 								</li>
 							)
 						}
 					} else {
 						return (
-							<li className="error" key={rule.id}>
+							<li className={rule.valid ? 'success' : 'error'} key={rule.id}>
 								{rule.name}
 							</li>
 						)

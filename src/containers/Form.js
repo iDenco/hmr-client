@@ -56,8 +56,19 @@ class Form extends Component {
 			formData: { username: '', email: '', password: '' }
 		})
 	}
+	allTrue() {
+		for (const rule of this.state.formRules) {
+			if (!rule.valid) return false
+		}
+		return true
+	}
 	validateForm() {
-		this.setState({ valid: true })
+		const rules = this.state.formRules
+		const formData = this.state.formData
+		rules[3].valid = false
+		if (formData.password.length > 10) rules[3].valid = true
+		this.setState({ formRules: rules })
+		if (this.allTrue()) this.setState({ valid: true })
 	}
 	handleFormChange(event) {
 		const obj = this.state.formData
