@@ -62,7 +62,7 @@ class App extends Component {
 									path="/register"
 									render={() => (
 										<Form
-											formType={'Register'}
+											formType={'register'}
 											isAuthenticated={this.state.isAuthenticated}
 											loginUser={this.loginUser.bind(this)}
 										/>
@@ -73,7 +73,7 @@ class App extends Component {
 									path="/login"
 									render={() => (
 										<Form
-											formType={'Login'}
+											formType={'login'}
 											isAuthenticated={this.state.isAuthenticated}
 											loginUser={this.loginUser.bind(this)}
 										/>
