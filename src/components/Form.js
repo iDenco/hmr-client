@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import axios from 'axios'
 
 class Form extends Component {
 	constructor(props) {
@@ -9,7 +10,8 @@ class Form extends Component {
 				username: '',
 				email: '',
 				password: ''
-			}
+			},
+			valid: false
 		}
 		this.handleUserFormSubmit = this.handleUserFormSubmit.bind(this)
 	}
@@ -26,10 +28,14 @@ class Form extends Component {
 			formData: { username: '', email: '', password: '' }
 		})
 	}
+	validateForm() {
+		this.setState({ valid: true })
+	}
 	handleFormChange(event) {
 		const obj = this.state.formData
 		obj[event.target.name] = event.target.value
 		this.setState(obj)
+		this.validateForm()
 	}
 	handleUserFormSubmit(event) {
 		event.preventDefault()
@@ -104,7 +110,12 @@ class Form extends Component {
 							onChange={this.handleFormChange.bind(this)}
 						/>
 					</div>
-					<input type="submit" className="btn btn-primary btn-lg btn-block" value="Submit" />
+					<input
+						type="submit"
+						className="btn btn-primary btn-lg btn-block"
+						value="Submit"
+						disabled={!this.state.valid}
+					/>
 				</form>
 			</div>
 		)
