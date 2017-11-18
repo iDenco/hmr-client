@@ -123,7 +123,12 @@ class Form extends Component {
 				this.props.loginUser(res.data.auth_token)
 			})
 			.catch(err => {
-				console.log(err)
+				if (formType === 'login') {
+					this.props.createMessage('User does not exist.', 'danger')
+				}
+				if (formType === 'register') {
+					this.props.createMessage('That user already exists.', 'danger')
+				}
 			})
 	}
 	render() {

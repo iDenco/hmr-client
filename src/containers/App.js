@@ -78,6 +78,7 @@ class App extends Component {
 											formType={'register'}
 											isAuthenticated={this.state.isAuthenticated}
 											loginUser={this.loginUser.bind(this)}
+											createMessage={this.createMessage.bind(this)}
 										/>
 									)}
 								/>
@@ -89,6 +90,7 @@ class App extends Component {
 											formType={'login'}
 											isAuthenticated={this.state.isAuthenticated}
 											loginUser={this.loginUser.bind(this)}
+											createMessage={this.createMessage.bind(this)}
 										/>
 									)}
 								/>
