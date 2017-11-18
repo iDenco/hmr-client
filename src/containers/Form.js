@@ -113,7 +113,7 @@ class Form extends Component {
 				<h1 style={{ textTransform: 'capitalize' }}>{this.props.formType}</h1>
 				<hr />
 				<br />
-				<FormErrors formType={this.props.formType} formRules={this.state.formRules} />
+				<FormErrors formType={this.props.formType} rules={this.state.formRules} />
 				<form onSubmit={event => this.handleUserFormSubmit(event)}>
 					{this.props.formType === 'register' && (
 						<div className="form-group">
