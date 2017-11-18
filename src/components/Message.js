@@ -5,7 +5,13 @@ const Message = props => {
 		<div className={`alert alert-${props.messageType}`}>
 			<span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true" />
 			<span>&nbsp;{props.messageName}</span>
-			<button className="close" data-dismiss="alert">
+			<button
+				className="close"
+				data-dismiss="alert"
+				onClick={() => {
+					props.removeMessage()
+				}}
+			>
 				&times;
 			</button>
 		</div>

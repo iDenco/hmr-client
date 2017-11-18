@@ -34,6 +34,15 @@ class App extends Component {
 			messageName: name,
 			messageType: type
 		})
+		setTimeout(() => {
+			this.removeMessage()
+		}, 3000)
+	}
+	removeMessage() {
+		this.setState({
+			messageName: null,
+			messageType: null
+		})
 	}
 	getUsers() {
 		axios
@@ -62,7 +71,11 @@ class App extends Component {
 				<div className="container">
 					{this.state.messageName &&
 						this.state.messageType && (
-							<Message messageName={this.state.messageName} messageType={this.state.messageType} />
+							<Message
+								messageName={this.state.messageName}
+								messageType={this.state.messageType}
+								removeMessage={this.removeMessage.bind(this)}
+							/>
 						)}
 					<div className="row">
 						<div className="col-md-6">
