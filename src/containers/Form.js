@@ -104,7 +104,7 @@ class Form extends Component {
 				<br />
 				<FormErrors formType={this.props.formType} formRules={this.state.formRules} />
 				<form onSubmit={event => this.handleUserFormSubmit(event)}>
-					{this.props.formType === 'Register' && (
+					{this.props.formType === 'register' && (
 						<div className="form-group">
 							<input
 								name="username"
